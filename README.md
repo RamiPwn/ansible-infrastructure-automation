@@ -106,7 +106,7 @@ apt install -y sudo openssh-server python3
 systemctl status ssh
 ```
 
-![SSH status](../assets/image1.png)
+![SSH status](assets/image1.png)
 
 ### Création de l'utilisateur d'administration
 
@@ -162,7 +162,7 @@ sudo apt install -y ansible git
 ansible --version
 ```
 
-![ansible --version](../assets/image2.png)
+![ansible --version](assets/image2.png)
 
 ---
 
@@ -177,7 +177,7 @@ ssh-keygen -t ed25519
 
 La clé est créée dans `~/.ssh/id_ed25519`.
 
-![Génération de la clé SSH ed25519](../assets/image3.png)
+![Génération de la clé SSH ed25519](assets/image3.png)
 
 ### Copie de la clé vers chaque serveur
 
@@ -195,7 +195,7 @@ ssh adminsys@192.168.93.82
 # La connexion doit s'établir sans demander de mot de passe
 ```
 
-![Connexion SSH sans mot de passe](../assets/image4.png)
+![Connexion SSH sans mot de passe](assets/image4.png)
 
 ---
 
@@ -258,7 +258,7 @@ Configuration disponible dans : [`ansible.cfg`](./ansible.cfg)
 ansible all -i inventory -m ping
 ```
 
-![Résultat du ping Ansible sur tous les hôtes](../assets/image5.png)
+![Résultat du ping Ansible sur tous les hôtes](assets/image5.png)
 
 ---
 
@@ -272,7 +272,7 @@ Playbook disponible dans : [`playbooks/install_apache.yml`](./playbooks/install_
 ansible-playbook -i inventory playbooks/install_apache.yml
 ```
 
-![Exécution du playbook install_apache](../assets/image6.png)
+![Exécution du playbook install_apache](assets/image6.png)
 
 ---
 
@@ -284,7 +284,7 @@ Playbook disponible dans : [`playbooks/install_mariadb.yml`](./playbooks/install
 ansible-playbook -i inventory playbooks/install_mariadb.yml
 ```
 
-![Exécution du playbook install_mariadb](../assets/image7.png)
+![Exécution du playbook install_mariadb](assets/image7.png)
 
 ---
 
@@ -296,7 +296,7 @@ Playbook disponible dans : [`playbooks/install_ftp.yml`](./playbooks/install_ftp
 ansible-playbook -i inventory playbooks/install_ftp.yml
 ```
 
-![Exécution du playbook install_ftp](../assets/image8.png)
+![Exécution du playbook install_ftp](assets/image8.png)
 
 ---
 
@@ -424,7 +424,7 @@ ansible-playbook -i inventory playbooks/check_services_log.yml
 cat ~/ansible/logs/services_report.log
 ```
 
-![Contenu du fichier services_report.log](../assets/image9.png)
+![Contenu du fichier services_report.log](assets/image9.png)
 
 Exemple de sortie par serveur :
 
@@ -461,7 +461,7 @@ Surveiller la génération des fichiers en temps réel :
 watch -n 1 ls -lh ~/ansible/logs/
 ```
 
-![Fichiers de logs générés par cron](../assets/image10.png)
+![Fichiers de logs générés par cron](assets/image10.png)
 
 ### Passage à l'intervalle horaire (production)
 
@@ -504,7 +504,7 @@ git commit -m "Ajout configuration custom Apache"
 git log
 ```
 
-![Historique des commits Git](../assets/image11.png)
+![Historique des commits Git](assets/image11.png)
 
 ---
 
