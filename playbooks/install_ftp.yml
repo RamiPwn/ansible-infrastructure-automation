@@ -1,0 +1,15 @@
+- hosts: ftp
+  become: yes
+
+  tasks:
+    - name: Installation ProFTPD
+      apt:
+        name: proftpd
+        state: present
+        update_cache: yes
+
+    - name: Démarrage FTP
+      service:
+        name: proftpd
+        state: started
+        enabled: yes
