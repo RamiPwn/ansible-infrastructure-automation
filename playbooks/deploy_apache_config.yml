@@ -1,0 +1,13 @@
+- hosts: web
+  become: yes
+
+  tasks:
+    - name: Copier la config custom Apache
+      copy:
+        src: ../configs/my_custom.conf
+        dest: /etc/apache2/conf-enabled/my_custom.conf
+
+    - name: Redémarrer Apache si la config change
+      service:
+        name: apache2
+        state: restarted
