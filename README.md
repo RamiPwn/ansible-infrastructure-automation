@@ -521,6 +521,6 @@ L'approche **Infrastructure as Code** adoptée ici permet de reproduire l'enviro
 
 ---
 
-> **Auteur** : adminsys  
+> **Auteur** : Rami Y.  
 > **Environnement** : Proxmox VE / Debian  
 > **Outil principal** : Ansible Core 2.19.4
