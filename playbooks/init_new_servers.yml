@@ -1,0 +1,17 @@
+- hosts: nouveaux
+  become: yes
+
+  tasks:
+    - name: Mise à jour système
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Installation outils de base
+      apt:
+        name:
+          - vim
+          - curl
+          - git
+          - htop
+        state: present
