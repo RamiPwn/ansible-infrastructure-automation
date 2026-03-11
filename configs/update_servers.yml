@@ -1,0 +1,12 @@
+# configs/my_custom.conf - version safe pour TP
+# Pas de DocumentRoot, pas de ServerName, juste des réglages sûrs
+
+# Logs custom
+ErrorLog ${APACHE_LOG_DIR}/error_custom.log
+CustomLog ${APACHE_LOG_DIR}/access_custom.log combined
+
+# Limite taille uploads
+LimitRequestBody 10485760 # 10 MB
+
+# Charset
+AddDefaultCharset UTF-8
