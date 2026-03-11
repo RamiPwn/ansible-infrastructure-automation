@@ -1,0 +1,41 @@
+- hosts: debian
+  become: yes
+
+  tasks:
+    - name: "Check services status"
+      shell: |
+        # Fonction pour tester le service proprement
+        check_svc() {
+          if systemctl is-active "$1" >/dev/null 2>&1; then
+            echo "active"
+          else
+            echo "inactive"
+          fi
+        }
+
+        # On récupère les états sans polluer la sortie
+        ST_APACHE=$(check_svc apache2)
+        ST_MARIADB=$(check_svc mariadb)
+        ST_FTP=$(check_svc proftpd)
+
+        # Affichage final formaté
+        echo "--------------------------------------------------"
+        echo "DATE : $(date '+%Y-%m-%d %H:%M:%S')"
+        echo "SRV  : {{ inventory_hostname }} ({{ ansible_host }})"
+        echo "--------------------------------------------------"
+        printf "%-12s | %-10s\n" "Apache2" "$ST_APACHE"
+        printf "%-12s | %-10s\n" "MariaDB" "$ST_MARIADB"
+        printf "%-12s | %-10s\n" "ProFTPD" "$ST_FTP"
+        echo "--------------------------------------------------"
+      args:
+        executable: /bin/bash
+      register: service_report
+
+    - name: "Nettoyage et Ecriture dans le log"
+      delegate_to: localhost
+      become: no
+      lineinfile:
+        path: ~/ansible/logs/services_report.log
+        line: "{{ service_report.stdout }}\n"
+        create: yes
+        insertafter: EOF
