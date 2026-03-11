@@ -1,0 +1,15 @@
+- hosts: web
+  become: yes
+
+  tasks:
+    - name: Installation Apache
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+
+    - name: Démarrage du service Apache
+      service:
+        name: apache2
+        state: started
+        enabled: yes
