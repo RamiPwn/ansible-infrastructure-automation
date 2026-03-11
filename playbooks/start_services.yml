@@ -1,0 +1,16 @@
+- hosts: debian
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: "Demarrage des services (silencieux)"
+      shell: "systemctl start {{ item }} 2>/dev/null || true"
+      loop:
+        - apache2
+        - mariadb
+        - proftpd
+      changed_when: false
+
+    - name: "Status final"
+      debug:
+        msg: "Les services sur {{ inventory_hostname }} ont ete demarres."
