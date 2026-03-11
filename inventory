@@ -1,0 +1,22 @@
+[web]
+srv-web      ansible_host=192.168.XX.XX
+srv-web-bdd  ansible_host=192.168.XX.XX
+
+[bdd]
+srv-bdd      ansible_host=192.168.XX.XX
+srv-web-bdd  ansible_host=192.168.XX.XX
+
+[ftp]
+srv-ftp-new  ansible_host=192.168.XX.XX
+
+[nouveaux]
+srv-ftp-new  ansible_host=192.168.XX.XX
+
+[debian:children]
+web
+bdd
+ftp
+nouveaux
+
+[debian:vars]
+ansible_user=adminsys
