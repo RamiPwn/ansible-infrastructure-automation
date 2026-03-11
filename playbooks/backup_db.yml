@@ -1,0 +1,12 @@
+- hosts: bdd
+  become: yes
+
+  tasks:
+    - name: Création dossier backup
+      file:
+        path: /backup
+        state: directory
+        mode: '0755'
+
+    - name: Sauvegarde bases
+      shell: mysqldump --all-databases > /backup/all_databases.sql
