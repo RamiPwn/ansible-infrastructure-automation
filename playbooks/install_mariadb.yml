@@ -1,0 +1,15 @@
+- hosts: bdd
+  become: yes
+
+  tasks:
+    - name: Installation MariaDB
+      apt:
+        name: mariadb-server
+        state: present
+        update_cache: yes
+
+    - name: Démarrage MariaDB
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
