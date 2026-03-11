@@ -1,0 +1,8 @@
+- hosts: debian
+  become: yes
+
+  tasks:
+    - name: "Mise a jour paquets"
+      apt:
+        update_cache: yes
+        upgrade: dist
