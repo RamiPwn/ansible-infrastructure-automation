@@ -1,0 +1,10 @@
+- hosts: debian
+  become: yes
+
+  tasks:
+    - name: Création utilisateur adminremote
+      user:
+        name: adminremote
+        groups: sudo
+        shell: /bin/bash
+        state: present
