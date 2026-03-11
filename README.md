@@ -1,5 +1,11 @@
 # 🖥️ Ansible Infrastructure Lab
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Rami%20Y.-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/rami-y-4286302a9/)
+[![Licence](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
+[![Ansible Version](https://img.shields.io/badge/Ansible-2.19.4-blue.svg)](#)
+[![OS](https://img.shields.io/badge/OS-Debian%20%2F%20Ubuntu-lightgrey.svg)](#)
+[![Technologies](https://img.shields.io/badge/Stack-Apache%20%2B%20MariaDB%20%2B%20ProFTPD-orange.svg)](#)
+
 Automatisation d'une infrastructure Linux avec **Ansible** sur des machines virtuelles **Proxmox**.  
 Ce projet met en place un contrôleur Ansible centralisé administrant plusieurs serveurs (web, base de données, FTP) de manière entièrement automatisée.
 
