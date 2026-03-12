@@ -183,7 +183,7 @@ ssh-keygen -t ed25519
 
 La clé est créée dans `~/.ssh/id_ed25519`.
 
-![Génération de la clé SSH ed25519](assets/image3.png)
+![Génération de la clé SSH ed25519](assets/image4.png)
 
 ### Copie de la clé vers chaque serveur
 
@@ -201,7 +201,7 @@ ssh adminsys@192.168.93.82
 # La connexion doit s'établir sans demander de mot de passe
 ```
 
-![Connexion SSH sans mot de passe](assets/image4.png)
+![Connexion SSH sans mot de passe](assets/image3.png)
 
 ---
 
